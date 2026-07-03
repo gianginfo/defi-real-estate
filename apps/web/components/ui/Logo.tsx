@@ -36,7 +36,7 @@ export function Logo() {
       }} />
       </div>
       <span className="ml-2 text-xl font-bold text-white">
-        Real<span className="text-indigo-400">Estates</span>
+        DeFi<span className="text-indigo-400">Estates</span>
       </span>
     </motion.div>;
 }

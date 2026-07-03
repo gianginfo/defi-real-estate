@@ -5,7 +5,6 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import pluginNext from "@next/eslint-plugin-next";
-import pluginReactRefresh from "eslint-plugin-react-refresh";
 import { config as baseConfig } from "./base.js";
 
 /**
@@ -39,7 +38,7 @@ export const nextJsConfig = [
   {
     plugins: {
       "react-hooks": pluginReactHooks,
-      "react-refresh": pluginReactRefresh,
+      "react-refresh": require("eslint-plugin-react-refresh"),
     },
     settings: { react: { version: "detect" } },
     rules: {
