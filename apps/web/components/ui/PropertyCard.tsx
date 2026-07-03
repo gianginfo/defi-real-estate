@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPinIcon, CoinsIcon, UsersIcon, TrendingUpIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Property } from '../../utils/types';
-import { Badge } from './Badge';
 
 type PropertyCardProps = {
   property: Property;
-  featured?: boolean;
 };
 
 export function PropertyCard({
-  property,
-  featured = false
+  property
 }: PropertyCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const progressPercentage = property.tokensSold / property.totalTokens * 100;
@@ -25,8 +23,8 @@ export function PropertyCard({
     stiffness: 300
   }} className="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 group" onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
       <Link href={`/property/${property.id}`}>
-        <div className="relative">
-          <img src={property.imageUrl} alt={property.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" />
+        <div className="relative overflow-hidden">
+          <Image src={property.imageUrl} alt={property.title} width={400} height={224} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" />
           {property.status === 'Sold Out' && isHovered && <motion.div initial={{
           opacity: 0
         }} animate={{
