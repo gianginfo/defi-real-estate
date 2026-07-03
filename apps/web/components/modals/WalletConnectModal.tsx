@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XIcon, WalletIcon } from 'lucide-react';
 import { useWallet } from '../../context/WalletContext';
@@ -57,7 +58,7 @@ export function WalletConnectModal({
               scale: 0.98
             }} onClick={handleConnect} className="bg-gray-700 hover:bg-gray-600 w-full p-4 rounded-lg flex items-center justify-between transition-colors">
                   <div className="flex items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="w-8 h-8 mr-3" />
+                    <Image src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" width={32} height={32} className="w-8 h-8 mr-3" />
                     <div>
                       <span className="text-white font-medium block">
                         MetaMask
